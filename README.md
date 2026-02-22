@@ -3,7 +3,7 @@
 Movie Review Management API
 This is a backend RESTful API built with Django and Django REST Framework. The project allows users to manage movie reviews by adding, updating, deleting, and viewing them through structured API endpoints.
 
-🚀 Phase 3 Implementation Progress
+  # Phase 3 Implementation Progress
 As of this update, the following foundational tasks have been completed:
 
 [x] Repository Setup: Initialized this GitHub repository for version control.
@@ -55,3 +55,14 @@ POST /api/reviews/ – Create a review
 
 
 GET /api/movies/{id}/reviews/ – View reviews for a specific movie
+
+# Phase 4 Implementation Progress
+
+- User authentication using Django sessions
+- CRUD operations for movies
+- CRUD operations for reviews
+- Only authenticated users can create, update, or delete reviews
+- Users cannot modify or delete reviews created by others
+- Validation for review ratings (1–5)
+- Custom endpoint to view reviews for a specific movie
+- Admin panel for managing users, movies, and reviews
