@@ -66,3 +66,4 @@ GET /api/movies/{id}/reviews/ – View reviews for a specific movie
 - Validation for review ratings (1–5)
 - Custom endpoint to view reviews for a specific movie
 - Admin panel for managing users, movies, and reviews
+
