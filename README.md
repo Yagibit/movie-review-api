@@ -1,69 +1,114 @@
-# movie-review-api
+# 🎬 Movie Review API
 
-Movie Review Management API
-This is a backend RESTful API built with Django and Django REST Framework. The project allows users to manage movie reviews by adding, updating, deleting, and viewing them through structured API endpoints.
+A RESTful Movie Review API built with **Django** and **Django REST Framework (DRF)**.  
+This API allows users to create, view, update, delete, search, and filter movie reviews.  
+Authentication and permissions ensure that only logged-in users can manage their own reviews.
 
-  # Phase 3 Implementation Progress
-As of this update, the following foundational tasks have been completed:
+The project is deployed live on **PythonAnywhere**.
 
-[x] Repository Setup: Initialized this GitHub repository for version control.
+---
 
-[x] Virtual Environment: Configured a Python venv to manage project dependencies.
+## 🚀 Live Demo
 
-[x] Project Initialization: Created the main Django project structure and the reviews application.
+Base URL:  
+https://yagibit.pythonanywhere.com/api/
 
-[x] Framework Configuration: Installed and configured Django REST Framework.
+---
 
+## 📌 Features
 
-🛠️ Technology Stack
-
-Backend Framework: Django 
-
-
-API Framework: Django REST Framework 
-
-
-Database: PostgreSQL (Production) / SQLite (Development) 
-
-
-Authentication: Token-based 
-
-📋 Database Architecture
-The API is designed around three core entities:
-
-
-User Table: Utilizes Django's built-in User model for authentication.
-
-
-Movie Table: Stores film details including title, description, and release year.
-
-
-Review Table: A bridge table linking users to movies, containing ratings (1-5) and review text.
-
-📡 Planned API Endpoints
-
-POST /api/users/register/ – Register a new user 
-
-
-POST /api/users/login/ – Authenticate user 
-
-
-GET /api/movies/ – List all movies 
-
-
-POST /api/reviews/ – Create a review 
-
-
-GET /api/movies/{id}/reviews/ – View reviews for a specific movie
-
-# Phase 4 Implementation Progress
-
-- User authentication using Django sessions
-- CRUD operations for movies
-- CRUD operations for reviews
+### 🔐 Authentication
+- Uses Django’s built-in authentication system
 - Only authenticated users can create, update, or delete reviews
-- Users cannot modify or delete reviews created by others
-- Validation for review ratings (1–5)
-- Custom endpoint to view reviews for a specific movie
-- Admin panel for managing users, movies, and reviews
+- Users can only modify their **own** reviews
 
+### 📝 Review Management (CRUD)
+- Create a movie review
+- View all reviews
+- Update a review
+- Delete a review
+
+Each review includes:
+- Movie Title
+- Review Content
+- Rating (1–5)
+- User
+- Created Date
+
+### 🔍 Search, Filter & Sort
+- Search reviews by **movie title**
+- Filter reviews by **rating**
+- Sort reviews by:
+  - Rating
+  - Date created
+- Pagination for large datasets
+
+---
+
+## 🛠️ Tech Stack
+
+- Python 3.10
+- Django
+- Django REST Framework
+- SQLite (default)
+- PythonAnywhere (deployment)
+
+---
+
+## 📂 Project Structure
+
+```text
+movie-review-api/
+│
+├── movie_api_project/
+│   ├── settings.py
+│   ├── urls.py
+│   ├── wsgi.py
+│
+├── reviews/
+│   ├── models.py
+│   ├── serializers.py
+│   ├── views.py
+│   ├── urls.py
+│
+├── manage.py
+├── requirements.txt
+└── README.md
+
+## 📡 API Endpoints
+
+| Method | Endpoint               | Description                                            |
+| ------ | ---------------------- | ------------------------------------------------------ |
+| GET    | `/api/reviews/`        | List all reviews (supports search, filter, sort)       |
+| POST   | `/api/reviews/`        | Create a new review (authenticated users only)         |
+| GET    | `/api/reviews/{id}/`   | Retrieve a single review by ID                         |
+| PUT    | `/api/reviews/{id}/`   | Fully update a review (owner & authenticated only)     |
+| PATCH  | `/api/reviews/{id}/`   | Partially update a review (owner & authenticated only) |
+| DELETE | `/api/reviews/{id}/`   | Delete a review (owner & authenticated only)           |
+| GET    | `/api-auth/login/`     | Login (Browsable API)                                  |
+
+
+## Validation Rules
+
+Rating must be between 1 and 5
+
+Movie title and review content are required
+
+Unauthorized users cannot modify reviews
+
+ ## Deployment
+
+The project is deployed on PythonAnywhere using:
+
+Manual web app configuration
+
+WSGI setup
+
+Virtual environment
+
+Static files collection
+
+## Author
+
+Yared Getachew
+Backend Developer – ALX Software Engineering Program
